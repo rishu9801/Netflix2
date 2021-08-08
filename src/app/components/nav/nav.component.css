@@ -60,6 +60,7 @@ a {
   }
   .ham-menu{
     display: inline-block;
+    cursor: pointer;
   }
   .nav-container{
     padding: 0.5rem 0.25rem;
