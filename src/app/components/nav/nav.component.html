@@ -1,0 +1,54 @@
+<div class="nav-container" [ngClass]="classes">
+  <span class="menu-container">
+    <div class="logo">
+      <a href="#"><img src="/assets/images/logo.png" alt="Netflix" /></a>
+    </div>
+    <div class="navbar">
+      <ul>
+        <li>
+          <a routerLink="/homepage-component" routerLinkActive="active">home</a>
+        </li>
+        <li>
+          <a routerLink="/moviespage-component" routerLinkActive="active"
+            >movies</a
+          >
+        </li>
+        <li>
+          <a routerLink="/tvpage-component" routerLinkActive="active"
+            >tv shows</a
+          >
+        </li>
+        <li>
+          <a routerLink="/recentpage-component" routerLinkActive="active"
+            >recently added</a
+          >
+        </li>
+        <li>
+          <a routerLink="/mylistpage-component" routerLinkActive="active"
+            >my list</a
+          >
+        </li>
+      </ul>
+    </div>
+  </span>
+  <div class="menu">
+    <ul>
+      <li>
+        <a><mat-icon>search</mat-icon></a>
+      </li>
+      <li><a>KIDS</a></li>
+      <li><a>DVD</a></li>
+      <li>
+        <a><mat-icon>notifications</mat-icon></a>
+      </li>
+      <li>
+        <a><mat-icon>account_circle</mat-icon></a>
+      </li>
+    </ul>
+  </div>
+  <span class="ham-menu" (click)="showSidebar()"
+    ><mat-icon>menu</mat-icon></span
+  >
+</div>
+<app-sidebar [sidebarStatus]='sidebarStatus'></app-sidebar>
+

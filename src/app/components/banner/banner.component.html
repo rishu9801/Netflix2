@@ -1,0 +1,17 @@
+<div class="container">
+  <ngx-slick-carousel
+  class="carousel"
+  #slickModal="slick-carousel"
+  [config]="bannerConfig"
+>
+  <div ngxSlickItem *ngFor="let d of bannerData" class="slide">
+    <div class="banner" style="background: linear-gradient(rgba(32, 32, 32, 0.726),rgba(31, 31, 31, 0.63)), url({{d.img}});">
+      <span class="banner-details">
+        <h2>{{d.title}}</h2>
+      <button mat-button class="btn"><mat-icon>play_arrow</mat-icon>Play</button>
+      <button mat-button class="btn">+My List</button>
+      </span>
+    </div>
+  </div>
+</ngx-slick-carousel>
+</div>
