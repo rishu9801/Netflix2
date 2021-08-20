@@ -19,5 +19,12 @@ export class MoviedataService {
     return this.http.get(`
     https://api.themoviedb.org/3/${title}?api_key=${this.key}&language=en-US&page=1}`);
   }
+
+  getMovie(id:number){
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.key}&language=en-US`)
+  }
+  searchMovie(input:string){
+    return this.http.get(`https://api.themoviedb.org/3/search/multi?api_key=${this.key}&language=en-US&query=${input}&page=1&include_adult=false`)
+  }
   
 }

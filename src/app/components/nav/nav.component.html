@@ -34,7 +34,7 @@
   <div class="menu">
     <ul>
       <li>
-        <a><mat-icon>search</mat-icon></a>
+        <a routerLink='/searchpage'><mat-icon>search</mat-icon></a>
       </li>
       <li><a>KIDS</a></li>
       <li><a>DVD</a></li>
@@ -46,9 +46,8 @@
       </li>
     </ul>
   </div>
-  <span class="ham-menu" (click)="showSidebar()"
-    ><mat-icon>menu</mat-icon></span
-  >
+  <span class="ham-menu" (click)="showSidebar()">
+    <mat-icon>menu</mat-icon>
+  </span>
 </div>
-<app-sidebar [sidebarStatus]='sidebarStatus'></app-sidebar>
-
+<app-sidebar [sidebarStatus]="sideBarStatus"></app-sidebar>

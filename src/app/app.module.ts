@@ -19,7 +19,11 @@ import { RecentpageComponent } from './pages/recentpage/recentpage.component';
 import { MylistpageComponent } from './pages/mylistpage/mylistpage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select'
+import {MatSelectModule} from '@angular/material/select';
+import { DetailViewComponent } from './components/detail-view/detail-view.component';
+import { SearchpageComponent } from './pages/searchpage/searchpage.component'
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -35,7 +39,10 @@ import {MatSelectModule} from '@angular/material/select'
     TvpageComponent,
     RecentpageComponent,
     MylistpageComponent,
-    FooterComponent
+    FooterComponent,
+    DetailViewComponent,
+    SearchpageComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,8 @@ import {MatSelectModule} from '@angular/material/select'
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

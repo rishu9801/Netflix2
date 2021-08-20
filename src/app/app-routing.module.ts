@@ -5,6 +5,9 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { MoviepageComponent } from './pages/moviepage/moviepage.component';
 import { RecentpageComponent } from './pages/recentpage/recentpage.component';
 import { TvpageComponent } from './pages/tvpage/tvpage.component';
+import { DetailViewComponent } from './components/detail-view/detail-view.component';
+import { ActivatedRoute } from '@angular/router';
+import { SearchpageComponent } from './pages/searchpage/searchpage.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/homepage-component', pathMatch: 'full' },
@@ -12,7 +15,11 @@ const routes: Routes = [
   {path: 'moviespage-component', component: MoviepageComponent},
   {path: 'tvpage-component', component: TvpageComponent},
   {path: 'recentpage-component', component: RecentpageComponent},
-  {path: 'mylistpage-component', component: MylistpageComponent}
+  {path: 'mylistpage-component', component: MylistpageComponent},
+  {path: `homepage-component/:id`,component:DetailViewComponent},
+  {path: `moviespage-component/:id`,component:DetailViewComponent},
+  {path: `tvpage-component/:id`,component:DetailViewComponent},
+  {path:'searchpage',component:SearchpageComponent}
 ];
 
 @NgModule({

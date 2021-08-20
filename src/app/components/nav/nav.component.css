@@ -3,15 +3,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 5;
+  z-index: 8;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .nav{
-  position: sticky;
   background: #1d1d1d;
-  top:0;
 }
 .ham-menu{
-  z-index: 8;
   padding: 0.5rem;
   display: none;
   color: #fff;

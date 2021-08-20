@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MoviedataService } from 'src/app/services/moviedata.service';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-slider',
@@ -13,6 +14,7 @@ export class SliderComponent implements OnInit {
     slidesToScroll: 4,
     infinite: true,
     autoplaySpeed: 5000,
+    swipeToSlide:true,
     responsive: [
       {
         breakpoint: 1500,
@@ -20,6 +22,7 @@ export class SliderComponent implements OnInit {
           slidesToShow: 6,
           slidesToScroll: 3,
           infinite: true,
+          swipeToSlide:true,
         },
       },
       {
@@ -28,6 +31,7 @@ export class SliderComponent implements OnInit {
           slidesToShow: 5,
           slidesToScroll: 3,
           infinite: true,
+          swipeToSlide:true,
         },
       },
       {
@@ -36,6 +40,7 @@ export class SliderComponent implements OnInit {
           slidesToShow: 4,
           slidesToScroll: 3,
           infinite: true,
+          swipeToSlide:true,
           arrows:false
         },
       },
@@ -45,6 +50,7 @@ export class SliderComponent implements OnInit {
           slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
+          swipeToSlide:true,
           arrows:false
         },
       },
@@ -54,6 +60,7 @@ export class SliderComponent implements OnInit {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+          swipeToSlide:true,
           arrows:false
         },
       },
@@ -63,18 +70,25 @@ export class SliderComponent implements OnInit {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
+          swipeToSlide:true,
           arrows:false
         },
       }
     ],
   };
   movies: any;
-  constructor(private movieData: MoviedataService) {}
+  constructor(private movieData: MoviedataService,
+    private router:Router,
+    private route:ActivatedRoute) {}
 
   ngOnInit(): void {
     this.movieData.getData(this.categories.url).subscribe((d: any) => {
       this.movies = [...d.results];
       console.log(this.movies);
     });
+  }
+  goToDetails(id:number){
+    this.router.navigate([`${id}`], {relativeTo: this.route},);
+    console.log('routing is working',this.route);
   }
 }

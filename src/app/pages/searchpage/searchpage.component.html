@@ -1,0 +1,24 @@
+<section>
+  <div class="searchBox">
+    <input
+      type="text"
+      autofocus
+      placeholder="Search"
+      [(ngModel)]="userInput"
+      (keyUp.Enter)="search()"
+    />
+  </div>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option value="movies">Movies</mat-option>
+      <mat-option value="tvShows">TV Shows</mat-option>
+      <mat-option value="both">Both</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div *ngIf="searchResults">
+    <h2>Search results for '{{ userInput | uppercase }}'</h2>
+    <app-card [results]='searchResults.results'></app-card>
+  </div>
+</section>
