@@ -1,24 +1,25 @@
+<app-nav></app-nav>
 <section>
-  <div class="searchBox">
+  <!-- <div class="searchMenu">
     <input
+      class="searchBox"
       type="text"
-      autofocus
       placeholder="Search"
       [(ngModel)]="userInput"
-      (keyUp.Enter)="search()"
+      [autofocus] = true
     />
-  </div>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Select an option</mat-label>
-    <mat-select [(value)]="selected">
-      <mat-option value="movies">Movies</mat-option>
-      <mat-option value="tvShows">TV Shows</mat-option>
-      <mat-option value="both">Both</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <mat-form-field appearance="fill" class="select">
+      <mat-label>Select an option</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="movies">Movies</mat-option>
+        <mat-option value="tvShows">TV Shows</mat-option>
+        <mat-option value="both">Both</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
   <div *ngIf="searchResults">
     <h2>Search results for '{{ userInput | uppercase }}'</h2>
-    <app-card [results]='searchResults.results'></app-card>
+    <app-card [results]="searchResults.results"></app-card>
   </div>
 </section>

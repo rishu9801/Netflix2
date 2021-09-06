@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviepageComponent implements OnInit {
 
-  category ={ url: 'movie/popular', title: 'Popular movies' }
+  category ={ url: 'movie/popular', title: 'Popular movies',type:'movie'}
   constructor() { }
 
   ngOnInit(): void {

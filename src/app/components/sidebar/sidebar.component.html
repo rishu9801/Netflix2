@@ -2,17 +2,17 @@
   <ul>
     <li class="search-bar">
       <a>
-        <input type="text" placeholder="Search" />
-        <mat-icon>search</mat-icon>
+        <input type="text" placeholder="Search" (keyUp.Enter)="search(input.value)" #input/>
+        <mat-icon type='submit'(click)='search(input.value)'>search</mat-icon>
       </a>
     </li>
-    <li><a routerLink="/homepage-component" class="active">home</a></li>
-    <li><a routerLink="/moviespage-component">movies</a></li>
-    <li><a routerLink="/tvpage-component">tv shows</a></li>
-    <li><a routerLink="/recentpage-component">recently added</a></li>
-    <li><a>My account</a></li>
-    <li><a routerLink="/mylistpage-component">my list</a></li>
-    <li><a>KIDS</a></li>
-    <li><a>DVD</a></li>
+    <li><a (click)='closeSideBar()' routerLink="/homepage-component" class="active">home</a></li>
+    <li><a (click)='closeSideBar()' routerLink="/moviespage-component">movies</a></li>
+    <li><a (click)='closeSideBar()' routerLink="/tvpage-component">tv shows</a></li>
+    <li><a (click)='closeSideBar()' routerLink="/recentpage-component">recently added</a></li>
+    <li><a (click)='closeSideBar()'>My account</a></li>
+    <li><a (click)='closeSideBar()' routerLink="/mylistpage-component">my list</a></li>
+    <li><a (click)='closeSideBar()'>KIDS</a></li>
+    <li><a (click)='closeSideBar()'>DVD</a></li>
   </ul>
 </div>

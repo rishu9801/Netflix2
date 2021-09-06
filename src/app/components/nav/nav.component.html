@@ -34,7 +34,7 @@
   <div class="menu">
     <ul>
       <li>
-        <a routerLink='/searchpage'><mat-icon>search</mat-icon></a>
+        <a (click)="searchBarToggle()"><mat-icon>search</mat-icon></a>
       </li>
       <li><a>KIDS</a></li>
       <li><a>DVD</a></li>
@@ -50,4 +50,21 @@
     <mat-icon>menu</mat-icon>
   </span>
 </div>
+<span class="searchBar" *ngIf="searchBarStatus">
+  <div>
+    <input
+      type="text"
+      placeholder="Search"
+      autofocus
+      (keyUp.Enter)="search(input.value)"
+      #input
+    />
+    <button class="search" (click)="search(input.value)">
+      <mat-icon>search</mat-icon>
+    </button>
+    <button class="close" (click)="searchBarToggle()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</span>
 <app-sidebar [sidebarStatus]="sideBarStatus"></app-sidebar>

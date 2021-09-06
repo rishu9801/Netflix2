@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="nav">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Netflix" />
+    </div>
+  </div>
+  <div class="card">
+    <h2>Sign in</h2>
+    <form class="example-form" [formGroup]='Form' (ngSubmit)='onSubmit()'>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Enter Email">
+          <mat-error *ngIf="!Form.valid && Form.touched">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+          
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="Enter Password">
+          <mat-error *ngIf="!Form.valid && Form.touched">
+            Your password must contain between 4 and 60 characters.
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="warn">Sign In</button>
+    </form>
+    <div class="login-options">
+      <mat-checkbox class="example-margin">Remember me</mat-checkbox>
+      <a>Need help?</a>
+    </div>
+    <div class="signUp">
+      <h3>New to Netflix ? <a >Sign Up Now</a></h3>
+    </div>
+    <div class="google">
+      <img src="assets/images/google.png" width="15px" alt="">
+      <a (click)='googleSignIn()'>
+        Sign In With google 
+      </a>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,27 @@
+.container{
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    padding: 2rem;
+    min-height: 85vh;
+    text-shadow: 2px 2px 4px #000;
+}
+.details{
+    transform: translateY(12rem);
+}
+.detail-title{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 2rem 0;
+}
+.detail{
+    display: flex;
+}
+.overview{
+    max-width: 35rem;
+}
+p{
+    padding: 0 0.5rem;
+}
+.mat-raised-button{
+    background-color: rgb(235, 6, 6);
+}

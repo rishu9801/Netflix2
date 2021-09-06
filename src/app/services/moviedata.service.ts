@@ -23,6 +23,9 @@ export class MoviedataService {
   getMovie(id:number){
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${this.key}&language=en-US`)
   }
+  getTv(id:number){
+    return this.http.get(`https://api.themoviedb.org/3/tv/${id}?api_key=${this.key}&language=en-US`)
+  }
   searchMovie(input:string){
     return this.http.get(`https://api.themoviedb.org/3/search/multi?api_key=${this.key}&language=en-US&query=${input}&page=1&include_adult=false`)
   }

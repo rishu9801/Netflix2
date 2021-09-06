@@ -5,7 +5,7 @@
     #slickModal="slick-carousel"
     [config]="sliderConfig"
   >
-    <div ngxSlickItem *ngFor="let m of movies" class="slide" (click)="goToDetails(m.id)">
+    <div ngxSlickItem *ngFor="let m of movies" class="slide" (click)="goToDetails(m)">
       <div class="card">
         <img src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}" alt="" />
       </div>

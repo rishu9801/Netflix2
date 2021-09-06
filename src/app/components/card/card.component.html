@@ -1,12 +1,12 @@
-<section *ngIf="results" class="card-container">
-    <div class="card" *ngFor="let m of results">
-      <span *ngIf="m.poster_path; else posterAlt">
-        <img src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}" alt="" />
-      </span>
-      <div>{{ m.title }}</div>
-      <div>{{ m.release_date }}</div>
+<section *ngIf="results" class="card-container" >
+    <div *ngFor='let m of results' (click)='goToDetails(m)'>
+        <div class="card">
+            <span *ngIf="m.poster_path; else posterAlt">
+                <img src="https://image.tmdb.org/t/p/w200{{ m.poster_path }}" alt="">
+            </span>
+        </div>
     </div>
   </section>
   <ng-template #posterAlt>
-    <h2>No poster Available</h2>
+    <h2 class="poster">No poster Available</h2>
   </ng-template>

@@ -1,0 +1,25 @@
+section{
+    color: #fff;
+}
+.searchMenu{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.searchBox{
+    font-size: 1.1rem;
+    width: 20rem;
+    padding: 0.5rem ;
+    padding-bottom: 0;
+    border: none;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+
+}
+.searchBox:focus-visible{
+    outline: none;
+}
+h2{
+    margin-left:2rem ;
+}

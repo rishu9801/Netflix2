@@ -1,4 +1,53 @@
-<div *ngIf="movie">
-  <p>{{ movie.title }}</p>
-  <p>{{ movie.tagline }}</p>
-</div>
+<section *ngIf="movie">
+  <div
+    class="container"
+    style="background: linear-gradient(rgba(76, 76, 76, 0.57),rgba(0, 0, 0, 0.65)),
+     url(https://image.tmdb.org/t/p/w200{{movie.backdrop_path}})"
+  >
+    <!-- <button (click)="goBack()">Back</button> -->
+    <div class="details">
+      <p class="detail-title">{{ movie.title }}</p>
+      <span class="detail">
+        <p>{{ movie.release_date }}</p>
+        |
+        <p class="runtime">{{ movie.runtime }} Mins</p>
+        <span *ngFor="let g of movie.genres">
+          <p class="genre">| &nbsp;&nbsp;{{ g.name }}</p>
+        </span>
+      </span>
+      <p class="overview">{{ movie.overview }}</p>
+      <div class="buttons">
+        <button mat-raised-button><mat-icon>play_arrow</mat-icon>
+        Play
+        </button> &nbsp;
+        <button mat-raised-button (click)='addToList(movie.title)'><mat-icon>add</mat-icon>
+        My list
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section *ngIf="show">
+  <div
+    class="container"
+    style="background: linear-gradient(rgba(76, 76, 76, 0.57),rgba(0, 0, 0, 0.65)),
+     url(https://image.tmdb.org/t/p/w200{{show.backdrop_path}})"
+  >
+    <!-- <button (click)="goBack()">Back</button> -->
+    <div class="details">
+      <p class="detail-title">{{ show.name }}</p>
+      <span class="detail">
+        <p>{{ show.first_air_date }}</p>
+        |
+        <p class="runtime">Seasons : {{ show.number_of_seasons }}</p>
+        |
+        <p class="runtime">Episodes : {{ show.number_of_episodes }}</p>
+        <span *ngFor="let g of show.genres">
+          <p class="genre">| &nbsp;&nbsp;{{ g.name }}</p>
+        </span>
+      </span>
+      <p class="overview">{{ show.overview }}</p>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

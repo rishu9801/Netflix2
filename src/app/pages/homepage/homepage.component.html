@@ -1,7 +1,11 @@
-<div class="container">
+<app-nav></app-nav>
+<div class="container-fluid m-o">
   <app-banner></app-banner>
   <section class="slide-container">
-    <div class="slider" *ngFor="let c of categories">
+    <div class="slider" *ngFor="let c of movies">
+      <app-slider [categories]="c"></app-slider>
+    </div>
+    <div class="slider" *ngFor="let c of tv">
       <app-slider [categories]="c"></app-slider>
     </div>
   </section>

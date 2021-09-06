@@ -1,0 +1,63 @@
+.container{
+    background:linear-gradient(rgba(0, 0, 0, 0.493),rgba(0, 0, 0, 0.363)),url(../../../assets/images/login-page-banner.jpg);
+    min-height: 100vh;
+    padding-top: 2rem;
+}
+.logo img{
+    width: 12rem;
+}
+h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.card{
+    width: 25rem;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 0 auto 5rem auto;
+    padding: 2rem 3rem;
+}
+form{
+    width: 100%;
+
+}
+.mat-form-field{
+    width: 100%;
+}
+input{
+    padding: 0.7rem 0;
+}
+button{
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    padding: 0.7rem 0
+}
+.login-options{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: gray;
+}
+a{cursor: pointer;}   
+.signUp h3{
+    color: gray;
+    margin: 1rem 0;
+}
+.signUp a ,.google a{
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+.signUp a:hover,.google a:hover{
+    border-bottom: 1px solid #fff;
+}
+input:-internal-autofill-selected{
+    background-color: transparent !important;
+}
+.google {
+    display: flex;
+    align-items: center;
+} 
+ 
+    
+
+    

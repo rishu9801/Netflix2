@@ -6,20 +6,22 @@ import { MoviepageComponent } from './pages/moviepage/moviepage.component';
 import { RecentpageComponent } from './pages/recentpage/recentpage.component';
 import { TvpageComponent } from './pages/tvpage/tvpage.component';
 import { DetailViewComponent } from './components/detail-view/detail-view.component';
-import { ActivatedRoute } from '@angular/router';
 import { SearchpageComponent } from './pages/searchpage/searchpage.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthGuard } from './pages/login-page/auth.guard';
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/homepage-component', pathMatch: 'full' },
-  {path: 'homepage-component', component: HomepageComponent},
+  { path: '',component:LoginPageComponent},
+  {path: 'homepage-component',canActivate:[AuthGuard], component: HomepageComponent},
   {path: 'moviespage-component', component: MoviepageComponent},
   {path: 'tvpage-component', component: TvpageComponent},
   {path: 'recentpage-component', component: RecentpageComponent},
   {path: 'mylistpage-component', component: MylistpageComponent},
+  {path:'searchpage',component:SearchpageComponent},
   {path: `homepage-component/:id`,component:DetailViewComponent},
   {path: `moviespage-component/:id`,component:DetailViewComponent},
   {path: `tvpage-component/:id`,component:DetailViewComponent},
-  {path:'searchpage',component:SearchpageComponent}
+  {path: `searchpage/:id`,component:DetailViewComponent},
 ];
 
 @NgModule({

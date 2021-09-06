@@ -8,7 +8,7 @@ import { Router,ActivatedRoute } from '@angular/router';
   styleUrls: ['./slider.component.css'],
 })
 export class SliderComponent implements OnInit {
-  @Input() categories = { url: '', title: '' };
+  @Input() categories:any
   sliderConfig = {
     slidesToShow: 8,
     slidesToScroll: 4,
@@ -87,8 +87,9 @@ export class SliderComponent implements OnInit {
       console.log(this.movies);
     });
   }
-  goToDetails(id:number){
-    this.router.navigate([`${id}`], {relativeTo: this.route},);
+  goToDetails(data:any){
+    console.log(data,'check');
+    this.router.navigate([`${data.id}`,{type:`${this.categories.type}`}], {relativeTo: this.route},);
     console.log('routing is working',this.route);
   }
 }

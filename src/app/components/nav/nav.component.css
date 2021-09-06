@@ -4,12 +4,12 @@
   justify-content: space-between;
   align-items: center;
   z-index: 8;
-  position: fixed;
   top: 0;
   width: 100%;
 }
 .nav{
   background: #1d1d1d;
+  position: fixed;
 }
 .ham-menu{
   padding: 0.5rem;
@@ -66,3 +66,35 @@ a {
     padding: 0.5rem 0.25rem;
   }
 }
+
+.searchBar {
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  padding: 0.5rem;
+  z-index: 9;
+  background-color: #1d1d1d;
+}
+.searchBar div{
+  border-bottom: 2px solid #fff;
+}
+.close,.search{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.close:focus-visible .search:focus-visible{
+  outline: none;
+}
+.searchBar input {
+  margin: 0 0.5rem;
+  width: 90%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  color: #fff;
+}
+.searchBar input:focus-visible {
+  outline: none;
+}
+
