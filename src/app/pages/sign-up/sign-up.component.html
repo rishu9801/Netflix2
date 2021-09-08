@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="nav">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Netflix" />
+    </div>
+    <button mat-raised-button color="warn" (click)="goToLogin()">
+      Sign In
+    </button>
+  </div>
+  <div class="center">
+    <h2>
+      Unlimited movies, TV <br />
+      shows and more.
+    </h2>
+    <h4>Watch anywhere. Cancel anytime.</h4>
+    <h5>
+      Ready to watch? Enter your email to create or restart your membership.
+    </h5>
+
+    <form [formGroup]="Form">
+      <div class="signUp">
+        <input
+          type="email"
+          placeholder="Email address"
+          formControlName="email"
+        />
+
+        <Button mat-raised-button color="warn">GetStarted</Button>
+        <br />
+      </div>
+      <span class="warning" *ngIf="!Form.valid && Form.touched">
+        <p>Please Enter a valid Email address</p>
+      </span>
+    </form>
+  </div>
+
+  <div class="footer"><app-footer></app-footer></div>
+</div>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { User } from '../appModels/user.model';
@@ -19,8 +20,9 @@ export interface authResponse {
 export class AuthService {
   apiKey = 'AIzaSyBMzIpurPUzu5BVMPu5rv1xCodbFlUVuxw';
   user = new Subject<User>();
+  isLoggedIn = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router:Router) {}
 
   signUp(email: string, pass: string) {
     return this.http
@@ -61,6 +63,7 @@ export class AuthService {
             res.idToken,
             +res.expiresIn
           );
+          this.isLoggedIn = true;
         })
       );
   }
@@ -93,7 +96,13 @@ export class AuthService {
           res.idToken,
           +res.expiresIn
         );
+        this.isLoggedIn = true;
       })
     );
+  }
+
+  signOut(){
+    this.isLoggedIn = false;
+    this.router.navigate([''])
   }
 }

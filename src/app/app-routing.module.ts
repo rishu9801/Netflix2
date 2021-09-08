@@ -9,19 +9,23 @@ import { DetailViewComponent } from './components/detail-view/detail-view.compon
 import { SearchpageComponent } from './pages/searchpage/searchpage.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AuthGuard } from './pages/login-page/auth.guard';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
-  { path: '',component:LoginPageComponent},
-  {path: 'homepage-component',canActivate:[AuthGuard], component: HomepageComponent},
-  {path: 'moviespage-component', component: MoviepageComponent},
+  { path: '',redirectTo:'login',pathMatch:'full'},
+  {path:'login',component:LoginPageComponent},
+  {path:'signUp',component:SignUpComponent},
+  {path: 'homepage',canActivate:[AuthGuard], component: HomepageComponent},
+  {path: 'movies',canActivate:[AuthGuard], component: MoviepageComponent},
   {path: 'tvpage-component', component: TvpageComponent},
   {path: 'recentpage-component', component: RecentpageComponent},
   {path: 'mylistpage-component', component: MylistpageComponent},
   {path:'searchpage',component:SearchpageComponent},
-  {path: `homepage-component/:id`,component:DetailViewComponent},
-  {path: `moviespage-component/:id`,component:DetailViewComponent},
+  {path: `homepage/:id`,component:DetailViewComponent},
+  {path: `movies/:id`,component:DetailViewComponent},
   {path: `tvpage-component/:id`,component:DetailViewComponent},
   {path: `searchpage/:id`,component:DetailViewComponent},
+  
 ];
 
 @NgModule({

@@ -1,0 +1,67 @@
+.container {
+  background: linear-gradient(rgba(0, 0, 0, 0.493), rgba(0, 0, 0, 0.363)),
+    url(../../../assets/images/login-page-banner.jpg);
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+.logo img {
+  width: 12rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 2rem;
+}
+.center {
+  max-width: 60%;
+  padding: 1rem;
+  text-align: center;
+  margin: auto;
+  margin-top: 6rem;
+}
+h2 {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+h4 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+h5 {
+  font-size: 1rem;
+}
+.signUp {
+  display: flex;
+  justify-content: center;
+}
+form {
+  width: 60%;
+  margin: auto;
+}
+
+p {
+  color: red;
+  font-size: 0.75rem;
+  text-align: left;
+}
+
+.signUp input {
+  padding: 1rem;
+  width: 100%;
+  border: none;
+}
+input:focus-visible {
+  outline: none;
+}
+.signUp button {
+  cursor: pointer;
+  padding: 1rem;
+  border: none;
+  background: red;
+  color: #fff;
+  font-size: 2rem;
+}
+.footer{
+    margin-top: 4rem;
+}

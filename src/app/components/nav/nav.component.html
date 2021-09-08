@@ -6,12 +6,10 @@
     <div class="navbar">
       <ul>
         <li>
-          <a routerLink="/homepage-component" routerLinkActive="active">home</a>
+          <a routerLink="/homepage" routerLinkActive="active">home</a>
         </li>
         <li>
-          <a routerLink="/moviespage-component" routerLinkActive="active"
-            >movies</a
-          >
+          <a routerLink="/movies" routerLinkActive="active">movies</a>
         </li>
         <li>
           <a routerLink="/tvpage-component" routerLinkActive="active"
@@ -41,9 +39,17 @@
       <li>
         <a><mat-icon>notifications</mat-icon></a>
       </li>
-      <li>
-        <a><mat-icon>account_circle</mat-icon></a>
+      <li id="profile">
+        <a [matMenuTriggerFor]="belowMenu"><mat-icon>account_circle</mat-icon></a>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+          <div class="float-menu">
+            <button mat-menu-item>Profile</button>
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item (click)='signOut()'>SignOut</button>
+          </div>
+        </mat-menu>
       </li>
+      
     </ul>
   </div>
   <span class="ham-menu" (click)="showSidebar()">
@@ -67,4 +73,5 @@
     </button>
   </div>
 </span>
+
 <app-sidebar [sidebarStatus]="sideBarStatus"></app-sidebar>

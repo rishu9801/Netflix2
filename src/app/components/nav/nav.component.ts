@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { MoviedataService } from 'src/app/services/moviedata.service';
 import { SharedService } from 'src/app/services/shared.service';
 
@@ -18,7 +19,8 @@ export class NavComponent implements OnInit {
   classes: any;
   sideBarStatus = this.sharedService.sidebarStatus;
   searchBarStatus = false;
-  constructor(private sharedService: SharedService,private service: MoviedataService,private router:Router) {}
+  accountStatus = false;
+  constructor(private sharedService: SharedService,private service: MoviedataService,private router:Router ,private authService:AuthService) {}
   ngOnInit(): void {}
   @HostListener('window:scroll') onScroll(e: Event): void {
    this.navPosition()
@@ -57,5 +59,8 @@ export class NavComponent implements OnInit {
     else{
       this.classes = 'nav-container';
     }
+  }
+  signOut(){
+    this.authService.signOut();
   }
 }

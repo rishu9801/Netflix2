@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {
@@ -32,6 +33,7 @@ import { DetailViewComponent } from './components/detail-view/detail-view.compon
 import { SearchpageComponent } from './pages/searchpage/searchpage.component';
 import { CardComponent } from './components/card/card.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     SearchpageComponent,
     CardComponent,
     LoginPageComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
     SocialLoginModule

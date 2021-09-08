@@ -35,6 +35,7 @@ export class SearchpageComponent implements OnInit {
   getData(){
     this.service.searchMovie(this.sharedService.userInput)
     .subscribe(res => {this.searchResults = res,console.log(res)});
+    this.userInput = this.sharedService.userInput;
   }
     
 }
